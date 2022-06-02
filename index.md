@@ -5,6 +5,6 @@
 -  [咏e](https://hexmonster.github.io/eee)
 
 ###  以下均可点击
--   [klpbbs主页](https://klpbbs.com/space-uid-127261.html)
--   [mcbbs主页](https://www.mcbbs.net/space-uid-3739794.html)
+-   [klpbbs主页](https://klpbbs.com/?127261)
+-   [mcbbs主页](https://www.mcbbs.net/?3739794)
 -   [程游社区主页](https://ucyclub.com/?25)
