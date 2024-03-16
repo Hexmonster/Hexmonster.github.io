@@ -1,1 +1,43 @@
-大型吃瓜现场
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HexMonster</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+    </head>
+    <body>
+        <script>
+function GetRequest(txt = location.search) { 
+   var url = txt; //获取url中"?"符后的字串
+   var theRequest = new Object(); 
+   if (url.indexOf("?") != -1) { 
+      var str = url.substr(1); 
+      strs = str.split("&"); 
+      for(var i = 0; i < strs.length; i ++) { 
+         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+      } 
+   } 
+   return theRequest; 
+};
+if location.search === "" document.write("<h1>这里没有任何东西</h1>");
+document.write(location.search);
+        </script>
+        <p></p>
+        <script>
+    var params = new Object();
+    params = GetRequest();
+    document.write("<br>");
+    for (i in params){
+        document.write(`${i} = ${params[i]} ; `)
+    };
+    </script>
+    </body>
+</html>
