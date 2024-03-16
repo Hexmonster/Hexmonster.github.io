@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HexMonster</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HexMonster</title>
+        <style>
         body {
             font-family: Arial, sans-serif;
         }
@@ -12,29 +12,33 @@
             color: #333;
         }
     </style>
-</head>
-<body>
-    <h1>Hexmonster</h1>
-    <p><a href="/eee">咏e</a></p>
-    <script> 
-    function GetRequest() { 
-       var url = location.search; //获取url中"?"符后的字串 
-       var theRequest = new Object(); 
-       if (url.indexOf("?") != -1) { 
-          var str = url.substr(1); 
-          strs = str.split("&"); 
-          for(var i = 0; i < strs.length; i ++) { 
-             theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
-          } 
-       } 
-       return theRequest; 
-    };
-    document.write(location.search);
+    </head>
+    <body>
+        <h1>Hexmonster</h1>
+        <p><a href="/eee">咏e</a></p>
+        <script> 
+function GetRequest(txt = location.search) { 
+   var url = txt; //获取url中"?"符后的字串
+   var theRequest = new Object(); 
+   if (url.indexOf("?") != -1) { 
+      var str = url.substr(1); 
+      strs = str.split("&"); 
+      for(var i = 0; i < strs.length; i ++) { 
+         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); 
+      } 
+   } 
+   return theRequest; 
+};
+document.write(location.search);
+        </script>
+        <p></p>
+        <script>
     var params = new Object();
     params = GetRequest();
-    document.write(`
-`);
-    document.write(params["uid"]);
-    </script>
-</body>
+    document.write("<br>");
+    for (i in params){
+        document.write(`${i} = ${params[i]} ; `)
+    };
+    </script>>
+    </body>
 </html>
