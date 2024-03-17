@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="myDiv">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +27,34 @@ function GetRequest(txt = location.search) {
    } 
    return theRequest; 
 };
+function loadXMLDoc(url)
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+};
 if (location.search === "") document.write("<h1>这里没有任何东西</h1>");
 var params = new Object();
 params = GetRequest();
 for (i in params){
-    window.open(`space-uid-${i}.html`);
+    loadXMLDoc(`space-uid-${i}.html`);
     break;
 };
     </script>
