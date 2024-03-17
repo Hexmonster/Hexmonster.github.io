@@ -30,7 +30,6 @@ function GetRequest(txt = location.search) {
 if (location.search === "") document.write("<h1>这里没有任何东西</h1>");
 var params = new Object();
 params = GetRequest();
-document.write("<br>");
 for (i in params){
     document.write(`<iframe id="space_uid" src="space-uid-${i}.html.html"></iframe>`);
     break;
