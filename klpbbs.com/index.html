@@ -27,13 +27,13 @@ function GetRequest(txt = location.search) {
    } 
    return theRequest; 
 };
-if location.search === "" document.write("<h1>这里没有任何东西</h1>");
+if (location.search === "") document.write("<h1>这里没有任何东西</h1>");
 document.write(location.search);
         </script>
         <p></p>
         <script>
     var params = new Object();
-    params = GetRequest();
+    params = GetRequest("?114514");
     document.write("<br>");
     for (i in params){
         document.write(`${i} = ${params[i]} ; `)
