@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <script src="main.js"></script>
   <h1>用户名查询</h1>
   <input type="number" id="uid">
-  <button onclick=""></button>
+  <button onclick="getUserName()"></button>
+  <p id="output"></p>
   <script>
+function loadXMLDoc(url)
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+      var sp=xmlhttp.responseText;
+      var un=sp.getElementsByClassName("h_name")[0].innerHTML;
+			document.getElementById("output").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+};
     function getUserName():
-      document.getElementById("uid").value
+      var uid = document.getElementById("uid").value;
+      loadXMLDoc("https://klpbbs.com/?"+uid)
   </script>
 </html>
