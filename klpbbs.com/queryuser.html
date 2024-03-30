@@ -3,7 +3,7 @@
   <h1>用户名查询</h1>
   <input type="number" id="uid"><br>
   <button onclick="getUserName()">查询</button>
-  <p id="output"></p>
+  <div id="output"></div>
   <script>
 function loadXMLDoc(url)
 {
@@ -22,8 +22,6 @@ function loadXMLDoc(url)
 	{
 		if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		{
-      var sp=xmlhttp.responseText;
-      var un=sp.getElementsByClassName("h_name")[0].innerHTML;
 			document.getElementById("output").innerHTML=xmlhttp.responseText;
 		}
 	}
